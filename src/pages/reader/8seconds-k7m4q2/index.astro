@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { featuredWork } from '../../../data/works';
+
+const base = import.meta.env.BASE_URL;
+const cover = `${base}${featuredWork.cover}`;
+const readUrl = `${base}reader/8seconds-k7m4q2/read/`;
+---
+
+<BaseLayout
+  title="八秒先の死角 | 作品ページ"
+  description={featuredWork.description.join('')}
+  noindex={true}
+  bodyClass="dark-page"
+>
+  <main class="reader-entry shell">
+    <div class="reader-cover-stage">
+      <img
+        src={cover}
+        alt={featuredWork.coverAlt}
+        width="1063"
+        height="1505"
+      />
+    </div>
+    <div class="reader-summary">
+      <p class="eyebrow">Short story</p>
+      <h1>{featuredWork.title}</h1>
+      <p class="tagline">{featuredWork.tagline}</p>
+      <p class="author">{featuredWork.author}</p>
+      <div class="description">
+        {featuredWork.description.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <a class="quiet-button" href={readUrl}>Webで読む</a>
+    </div>
+  </main>
+</BaseLayout>

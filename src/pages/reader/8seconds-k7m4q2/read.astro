@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import manuscript from '../../../data/manuscript.json';
+
+const base = import.meta.env.BASE_URL;
+const workUrl = `${base}reader/8seconds-k7m4q2/`;
+---
+
+<BaseLayout
+  title="八秒先の死角 | Web版"
+  description="オカモ・T・タイチ『八秒先の死角』Web版"
+  noindex={true}
+  bodyClass="reading-page"
+>
+  <header class="reading-header">
+    <a href={workUrl} aria-label="八秒先の死角の作品ページへ戻る">← 作品ページへ戻る</a>
+    <p>{manuscript.title}</p>
+  </header>
+
+  <main class="manuscript">
+    <header class="manuscript-title">
+      <h1>{manuscript.title}</h1>
+      <p>{manuscript.author}</p>
+    </header>
+
+    {manuscript.chapters.map((chapter) => (
+      <section class="chapter" aria-labelledby={`chapter-${chapter.id}`}>
+        <h2 id={`chapter-${chapter.id}`}>{chapter.title}</h2>
+        <div class="chapter-body">
+          {chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+    ))}
+  </main>
+
+  <footer class="reading-footer">
+    <a href={workUrl}>← 作品ページへ戻る</a>
+  </footer>
+</BaseLayout>
