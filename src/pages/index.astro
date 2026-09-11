@@ -42,14 +42,32 @@ const asset = (path: string) => `${base}${path.replace(/^\//, '')}`;
       </article>
     </section>
 
-    <section class="section quiet-section shell" aria-labelledby="other-heading">
+    <section class="section trailer-section shell" aria-labelledby="trailer-heading">
       <p class="section-number" aria-hidden="true">02</p>
+      <h2 id="trailer-heading">『八秒先の死角』予告編</h2>
+      <div class="trailer-frame">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster={asset('images/8seconds-trailer-poster.webp')}
+          aria-label="短編小説『八秒先の死角』予告編"
+        >
+          <source src={asset('video/8seconds-trailer.mp4')} type="video/mp4" />
+          お使いのブラウザでは動画を再生できません。
+          <a href={asset('video/8seconds-trailer.mp4')}>予告編を開く</a>
+        </video>
+      </div>
+    </section>
+
+    <section class="section quiet-section shell" aria-labelledby="other-heading">
+      <p class="section-number" aria-hidden="true">03</p>
       <h2 id="other-heading">その他の作品</h2>
       <p class="muted-copy">現在、準備中です。</p>
     </section>
 
     <section class="section profile shell" aria-labelledby="profile-heading">
-      <p class="section-number" aria-hidden="true">03</p>
+      <p class="section-number" aria-hidden="true">04</p>
       <h2 id="profile-heading">おかもとたいち</h2>
       <div class="profile-copy">
         <p>静岡県浜松市出身。本業はエンジニアで、趣味として小説や随筆を書いています。</p>

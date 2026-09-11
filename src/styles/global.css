@@ -191,6 +191,24 @@ img {
   line-height: 1.9;
 }
 
+.trailer-section > h2 {
+  margin-bottom: 48px;
+}
+
+.trailer-frame {
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.trailer-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: contain;
+}
+
 .quiet-section {
   min-height: 420px;
 }
@@ -406,6 +424,10 @@ img {
 
   .section > h2 {
     margin-bottom: 48px;
+  }
+
+  .trailer-section > h2 {
+    margin-bottom: 36px;
   }
 
   .featured-work,
