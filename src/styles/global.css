@@ -80,8 +80,7 @@ img {
   padding-block: 96px 120px;
 }
 
-.eyebrow,
-.section-number {
+.eyebrow {
   margin: 0 0 24px;
   color: var(--faint);
   font-family: var(--sans);
@@ -225,7 +224,6 @@ img {
   column-gap: clamp(52px, 9vw, 128px);
 }
 
-.profile .section-number,
 .profile > h2 {
   grid-column: 1;
 }
@@ -240,11 +238,15 @@ img {
 }
 
 .profile-copy {
-  grid-row: 1 / span 2;
-  padding-top: 44px;
+  grid-row: 1;
+  padding-top: 0;
   color: #d3d5d4;
   font-family: var(--serif);
   line-height: 2.1;
+}
+
+.profile .text-link {
+  grid-row: 2;
 }
 
 .profile-copy p {
